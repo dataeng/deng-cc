@@ -13,6 +13,8 @@ which is equivalent to:
 
 In the proposed solution a user needs to set two output files (for Feature 1 and 2). tweets_cleaned.py reads input file with raw tweets just once and then for each tweet emits cleaned tweet to ft1.txt (Feature 1) and calculates average degree for current hashtag graph and writes it to ft2.txt (Feature 2).
 
+Output files are re-written at each run. 'data-gen' dir with large tweets.txt file was removed from this repo. However, ft1.txt and ft2.txt in 'tweet_output' in fact contain results of processing original data-gen/tweets.txt. For convenience, two smaller files with raw tweets are available in 'tweet_input' dir.
+
 I used deque() from python's *collections* to implement 60s-window tweet stream.
 
 Hashtag graph is implemented as python's dictionary, where key is a hashtag name and value is a list (where elements are names of hashtags linked to this hashtag; note: key's hashtag name is always included in the list). Adding more vertices is done by (unique) combining of lists, e.g.:
