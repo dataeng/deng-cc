@@ -16,7 +16,7 @@ In the proposed solution a user needs to set two output files (for Feature 1 and
 I used deque() from python's *collections* to implement 60s-window tweet stream.
 
 Hashtag graph is implemented as python's dictionary, where key is a hashtag name and value is a list (where elements are names of hashtags linked to this hashtag; note: key's hashtag name is always included in the list). Adding more vertices is done by (unique) combining of lists, e.g.:
-(key)Apache => (value)['Spark','Apache'] with a new tweet (#Apache, #HBase) becomes (key)Apache => (value)['Spark','Apache','HBase'] since ['Spark','Apache'] + ['Apache','HBase'] = ['Spark','Apache','HBase'] 
+(**key**)Apache => (**value**)['Spark','Apache'] with a new tweet (#Apache, #HBase) becomes (**key**)Apache => (**value**)['Spark','Apache','HBase'] since ['Spark','Apache'] + ['Apache','HBase'] = ['Spark','Apache','HBase']. Removing vertices is done by finding differences between lists and appending key hashtag itself: i.e. (**key**)Apache => (**value**)['Spark','Apache','HBase'] with out-of-window tweet (#Apache, #Spark) becomes (**key**)Apache => (**value**)['Apache','HBase'] since ( ['Spark','Apache','HBase'] - ['Apache','Spark'] ) + ['Apache'] = ['Apache','HBase']. 
 
 
 
