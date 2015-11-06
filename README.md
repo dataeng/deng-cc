@@ -4,8 +4,9 @@ The code in 'src' implements the requested features in Python.
 
 ## Quick Guide to the solution
 To run (from the project directory):
-	./run.sh
+		./run.sh
 which is equivalent to:
+		python src/tweets_cleaned.py tweet_input/tweets.txt tweet_output/ft1.txt tweet_output/ft2.txt
 	
 
 
