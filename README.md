@@ -9,35 +9,15 @@ To run (from the project directory):
 
 which is equivalent to:
 
-		./run.sh
+		python src/tweets_cleaned.py tweet_input/tweets.txt tweet_output/ft1.txt tweet_output/ft2.txt
 
+In the proposed solution a user needs to set two output files (for Feature 1 and 2). tweets_cleaned.py reads input file with raw tweets just once and then for each tweet emits cleaned tweet to ft1.txt (Feature 1) and calculates average degree for current hashtag graph and writes it to ft2.txt (Feature 2).
 
+I used deque() from python's *collections* to implement 60s-window tweet stream.
 
+Hashtag graph is implemented as python's dictionary, where key is a hashtag name and value is a list (where elements are names of hashtags linked to this hashtag; note: key's hashtag name is always included in the list). Adding more vertices is done by (unique) combining of lists, e.g.:
+(key)Apache => (value)['Spark','Apache'] with a new tweet (#Apache, #HBase) becomes (key)Apache => (value)['Spark','Apache','HBase'] since ['Spark','Apache'] + ['Apache','HBase'] = ['Spark','Apache','HBase'] 
 
-
-1. Basic feature implementation required by the coding challenge.
-
-
-2. Visualization of hashtag graph degree trend.
-	If user want to visuallize the trend of hashtag average and peak degree. It also prints the statistics of how many times one hashtag be the one with most connections
-
-	The command to run to get the solution:
-
-		python ./src/hashtag_plots.py ./tweet_input/tweets.txt ./tweet_output/ft3.txt
-
-
-	Sample Average Degree Trend diagram
-		![average-tweet-hashtag-degree](images/average_tweet_hashtag_degree.png)
-
-
-3. Unit testing for the two feature
-	For the tweet cleaning feature, execute the following test program:
-
-		python -m test.test_tweet
-
-	For the tweet graph feature unit testing, execute the following program:
-
-		python -m test.test_tweet_graph
 
 
 ## Challenge Summary
