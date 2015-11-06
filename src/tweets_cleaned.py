@@ -6,7 +6,7 @@ from tweets_graph import hashtaggraph
 def rmv_non_ascii(text):
 	return re.sub(r'[^\x00-\x7F]+','', text)
 
-# to remove escape characters
+# to remove escape characters and whitespaces
 def rmv_escape(text):
 	tt = text.replace('\/', '/')
 	tt = tt.replace(r'\\', '\\')
