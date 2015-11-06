@@ -96,7 +96,7 @@ for line in rawdata:
 		continue
 
 # append info about tweets with unicode to the end of output_f1
-output_f1.write(str(ucounter) + ' tweets contained unicode.')
+output_f1.write(str(ucounter) + ' tweets contained unicode.' + '\n')
 
 # close files
 rawdata.close()
