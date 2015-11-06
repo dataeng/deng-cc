@@ -11,6 +11,8 @@ which is equivalent to:
 
 		python src/tweets_cleaned.py tweet_input/tweets.txt tweet_output/ft1.txt tweet_output/ft2.txt
 
+**Note**: in this repo tweet_input/tweets.txt exists but empty. However, tweet_input/test_100.txt might be used instead.  
+
 In the proposed solution a user needs to set two output files (for Feature 1 and 2). tweets_cleaned.py reads input file with raw tweets just once and then for each tweet emits cleaned tweet to ft1.txt (Feature 1) and calculates average degree for current hashtag graph and writes it to ft2.txt (Feature 2).
 
 Output files are re-written at each run. 'data-gen' dir with large tweets.txt file was removed from this repo. However, ft1.txt and ft2.txt in 'tweet_output' in fact contain results of processing original data-gen/tweets.txt. For convenience, two smaller files with raw tweets are available in 'tweet_input' dir.
@@ -21,20 +23,6 @@ Hashtag graph is implemented as python's dictionary, where key is a hashtag name
 (**key**)Apache => (**value**)['Spark','Apache'] with a new tweet (#Apache, #HBase) becomes (**key**)Apache => (**value**)['Spark','Apache','HBase'] since ['Spark','Apache'] + ['Apache','HBase'] = ['Spark','Apache','HBase']. Removing vertices is done by finding differences between lists and appending key hashtag itself: i.e. (**key**)Apache => (**value**)['Spark','Apache','HBase'] with out-of-window tweet (#Apache, #Spark) becomes (**key**)Apache => (**value**)['Apache','HBase'] since ( ['Spark','Apache','HBase'] - ['Apache','Spark'] ) + ['Apache'] = ['Apache','HBase']. 
 
 
-
-## Challenge Summary
-
-This challenge is to implement two features:
-
-1. Clean and extract the text from the raw JSON tweets that come from the Twitter Streaming API, and track the number of tweets that contain unicode.
-2. Calculate the average degree of a vertex in a Twitter hashtag graph for the last 60 seconds, and update this each time a new tweet appears.
-
-Here, we have to define a few concepts (though there will be examples below to clarify):
-
-- A tweet's text is considered "clean" once all of the escape characters (e.g. \n, \", \/ ) and unicode have been removed.
-- A Twitter hashtag graph is a graph connecting all the hashtags that have been mentioned together in a single tweet.
-
-## Details of Implementation
 
 
 ## Challenge Summary
