@@ -3,7 +3,7 @@ Insight Data Engineering - Coding Challenge
 The code in 'src' implements the requested features in Python.   
 
 ## Quick Guide to the solution
-To run:
+To run :
 		./run.sh
 
 
