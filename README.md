@@ -4,18 +4,19 @@ The code in 'src' implements the requested features in Python.
 
 ## Quick Guide to the solution
 To run (from the project directory):
+
 		./run.sh
+
 which is equivalent to:
-		python src/tweets_cleaned.py tweet_input/tweets.txt tweet_output/ft1.txt tweet_output/ft2.txt
-	
+
+		./run.sh
+
+
 
 
 
 1. Basic feature implementation required by the coding challenge.
-	The commands to run to get the solutions:
 
-		python ./src/tweets_cleaned.py ./tweet_input/tweets.txt ./tweet_output/ft1.txt
-		python ./src/average_degree.py ./tweet_input/tweets.txt ./tweet_output/ft2.txt
 
 2. Visualization of hashtag graph degree trend.
 	If user want to visuallize the trend of hashtag average and peak degree. It also prints the statistics of how many times one hashtag be the one with most connections
