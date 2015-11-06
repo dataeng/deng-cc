@@ -3,8 +3,10 @@ Insight Data Engineering - Coding Challenge
 The code in 'src' implements the requested features in Python.   
 
 ## Quick Guide to the solution
-To run :
-		./run.sh
+To run (from the project directory):
+	./run.sh
+which is equivalent to:
+	
 
 
 
@@ -50,10 +52,6 @@ Here, we have to define a few concepts (though there will be examples below to c
 
 ## Details of Implementation
 
-
-
-
-For this coding challenge, you will develop tools that could help analyze the community of Twitter users.  For simplicity, the features we will build are primitive, but you could easily build more complicated features on top of these.   
 
 ## Challenge Summary
 
